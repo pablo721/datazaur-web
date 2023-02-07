@@ -1,0 +1,8 @@
+
+    <h3> Your currency: {{ currency.symbol }} </h3>
+    <form method="post" action="#" id="select_currency">
+        {% csrf_token %}
+        {{ currency_form.as_table }}
+        <button type="submit" value="submit" id="select_currency_button"> Select </button>
+    </form>
+

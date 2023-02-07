@@ -1,0 +1,36 @@
+
+<table class="w3-table">
+    <thead>
+        <tr>
+            <td>
+                Symbol
+            </td>
+            <td>
+                Price
+            </td>
+            <td>
+                24h Δ
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        {% for symbol in symbols %}
+            <tr>
+                <td>
+                    {{ symbol.0 |safe}}
+                </td>
+                <td>
+                    {{ symbol.1 }}
+                </td>
+                    <td>
+                        {% if symbol.2 %}
+                            {{ symbol.2 |safe}}
+                        {% else %}
+
+                        {% endif %}
+                    </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+

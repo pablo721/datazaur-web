@@ -1,0 +1,13 @@
+{% extends 'website/base.html' %}
+
+{% block content %}
+    <h3>
+        You need to log in to use watchlist and portfolio.
+    </h3>
+    <h3>
+        <a href="{% url 'website:login' %}"> Login page </a>
+    </h3>
+    <h3>
+        <a href="{% url 'website:signup' %}"> Sign up page </a>
+    </h3>
+{% endblock %}

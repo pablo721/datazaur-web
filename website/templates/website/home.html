@@ -1,0 +1,23 @@
+{% extends 'website/base.html' %}
+
+
+{% block content %}
+    <h3>
+        {% if user.is_authenticated %}
+        Hello {{ user.username }}!
+        {% else %}
+        Hello !
+        {% endif %}
+    </h3>
+    <h2>
+        Welcome to Datazaur Web
+    </h2>
+
+
+{% endblock %}
+
+
+
+
+
+

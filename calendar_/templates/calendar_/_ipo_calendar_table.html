@@ -1,0 +1,48 @@
+
+
+<table id="calendar_table">
+    <thead>
+    <tr>
+        {% for col in columns %}
+        <th>
+            {{ col }}
+        </th>
+        {% endfor %}
+    </tr>
+    </thead>
+    <tbody>
+    {% for row in calendar %}
+    <tr>
+        <td>
+            {{ row.id }}
+        </td>
+        <td>
+            {{ row.date }}
+        </td>
+        <td>
+            {{ row.exchange }}
+        </td>
+        <td>
+            {{ row.name }}
+        </td>
+        <td>
+            {{ row.numberOfShares }}
+        </td>
+        <td>
+            {{ row.price }}
+        </td>
+        <td>
+            {{ row.status }}
+        </td>
+        <td>
+            {{ row.symbol }}
+        </td>
+        <td>
+            {{ row.totalSharesValue }}
+        </td>
+
+
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>

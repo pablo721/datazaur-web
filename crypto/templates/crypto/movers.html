@@ -1,0 +1,28 @@
+{% extends 'crypto/crypto.html' %}
+
+{% block content %}
+<div id="movers_div">
+
+    <div id="gainers_table">
+        <h2 id="gainers_title">
+            <b> Biggest gainers (24h) </b>
+        </h2>
+        {{ gainers |safe }}
+    </div>
+
+    <div id="losers_table">
+        <h2 id="losers_title">
+            <b> Biggest losers (24h) </b>
+        </h2>
+        {{ losers |safe }}
+    </div>
+
+</div>
+{% endblock %}
+
+{% block js %}
+    <script src="{% static 'js/changeTimeframe.js' %}" type="text/javascript"></script>
+
+{% endblock %}
+
+

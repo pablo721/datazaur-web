@@ -1,0 +1,16 @@
+{% extends 'website/base.html' %}
+
+
+{% block navbar %}
+    {% include 'macro/_macro_navbar.html' %}
+{% endblock %}
+
+
+{% block content %}
+    <div id="macro_div">
+
+        {{ df |safe }}
+
+    </div>
+
+{% endblock %}

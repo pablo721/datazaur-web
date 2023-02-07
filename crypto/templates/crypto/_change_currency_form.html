@@ -1,0 +1,15 @@
+
+<form id="watch_curr_form" method="post" action="#" onclick="">
+    {% csrf_token %}
+    <h5> Change currency </h5>
+    <select id="watch_curr_select" name="watch_curr_select">
+        {% for currency in currencies %}
+            <option id="watch_curr_opt_{{ currency.code }}" name="watch_curr_opt_{{ currency.code }}">
+                {{ currency.name }} ({{ currency.code }})
+            </option>
+        {% endfor %}
+    </select>
+    <button class="w3-btn-black"  form="watch_curr_form" id="watch_curr_btn" name="watch_curr_btn" type="submit" value="1"> Save </button>
+</form>
+
+

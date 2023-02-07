@@ -1,0 +1,37 @@
+{% extends 'website/base.html' %}
+
+{% block content %}
+<div id="friends_list">
+    {% include 'website/_friend_list.html' %}
+</div>
+
+<div id="portfolio">
+    {% include 'portfolio/_portfolio_table.html' %}
+</div>
+
+<div id="watchlist">
+    {% include 'watchlist/_watchlist_table.html' %}
+
+</div>
+
+<div id="currency_selection">
+    {% include 'website/_select_currency_form.html' %}
+</div>
+
+<div id="acc_management">
+    <div id="set_email_div">
+        {% include 'website/_set_email_form.html' %}
+    </div>
+    <div id="delete_account_div">
+        {% include 'website/_delete_account_form.html' %}
+    </div>
+
+</div>
+
+
+{% endblock %}
+
+
+{% block js %}
+
+{% endblock %}

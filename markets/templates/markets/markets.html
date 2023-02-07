@@ -1,0 +1,92 @@
+{% extends 'website/base.html' %}
+
+{% block navbar %}
+    {% include 'markets/_markets_navbar.html' %}
+{% endblock %}
+
+{% block content %}
+<div id="markets_div">
+    <div id="markets_header">
+        <ul id="markets_top" class="w3-bar w3-black w3-card">
+            <li>
+                <input id="markets_search" placeholder="Search...">
+            </li>
+            <li>
+                <h4 id="currency_title">
+                    Currency
+                </h4>
+            </li>
+            <li>
+                <select id="fx_chg_curr">
+                    {% for currency in currencies %}
+                        <option id="{{ currency }}" value="{{ currency }}" class="fx_option">
+                            {{ currency }}
+                        </option>
+                    {% endfor %}
+                </select>
+            </li>
+            <li>
+                <h4>
+                    Country
+                </h4>
+            </li>
+            <li>
+                <select id="indices_chg_country">
+                    {% for country in countries %}
+                        <option id="{{ country.id }}" value="{{ country.name }}">
+                            {{ currency.name }}
+                        </option>
+                    {% endfor %}
+                </select>
+            </li>
+        </ul>
+    </div>
+    <div id="all_markets">
+        <div id="crypto_col" class="market_col">
+            <h2>
+                Crypto
+            </h2>
+            {{ crypto |safe }}
+        </div>
+        <div id="fx_col" class="market_col">
+                <h2 id="fx_title">
+                    Forex
+                </h2>
+            {{ forex |safe }}
+        </div>
+        <div id="indices_col" class="market_col">
+            <h2>
+                Indices
+            </h2>
+            {{ indices |safe }}
+        </div>
+        <div id="bonds_col" class="market_col">
+            <h2>
+                Bonds
+            </h2>
+            {{ yields |safe }}
+        </div>
+
+        <div id="commodities_col" class="market_col">
+            <h2>
+                Commodities
+            </h2>
+            {% for k,v in commodities.items %}
+            <div class="commodity_table">
+                <h3>
+                    {{ k }}
+                </h3>
+                {{ v |safe }}
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block js %}
+    <script src="{% static 'js/hideIndexCol.js' %}" type="text/javascript"></script>
+{% endblock %}
+
+
+

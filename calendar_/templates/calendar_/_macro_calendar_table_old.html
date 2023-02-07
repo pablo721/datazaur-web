@@ -1,0 +1,49 @@
+<table id="calendar_table">
+    <thead>
+    <tr>
+        {% for col in columns %}
+        <th>
+            {{ col }}
+        </th>
+        {% endfor %}
+    </tr>
+    </thead>
+    <tbody>
+    {% for row in calendar %}
+    <tr>
+        <td>
+            {{ row.id }}
+        </td>
+        <td>
+            {{ row.date }}
+        </td>
+        <td>
+            {{ row.time }}
+        </td>
+        <td>
+            {{ row.zone }}
+        </td>
+        <td>
+            {{ row.currency }}
+        </td>
+        <td>
+            {{ row.importance }}
+        </td>
+        <td>
+            {{ row.event }}
+        </td>
+        <td>
+            {{ row.actual }}
+        </td>
+        <td>
+            {{ row.forecast }}
+        </td>
+        <td>
+            {{ row.previous }}
+        </td>
+
+
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>

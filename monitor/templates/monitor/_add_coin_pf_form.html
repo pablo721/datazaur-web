@@ -1,0 +1,23 @@
+
+<form id="pf_add_coin_form" method="post" action="#">
+    {% csrf_token %}
+    <h4>
+        Add coin
+    </h4>
+    <label for="pf_add_coin_select">
+        Coin
+    </label>
+    <select id="pf_add_coin_select" name="pf_add_coin_select">
+        {% for coin in coins %}
+            <option id="pf_coin_opt_{{ coin.symbol }}" name="pf_coin_opt_{{ coin.symbol }}" value="pf_coin_opt_{{ coin.symbol }}">
+                {{ coin.name }}
+            </option>
+        {% endfor %}
+    </select>
+    <label for="pf_coin_amount_input">
+        Amount
+    </label>
+    <input id="pf_coin_amount_input" type="text" placeholder="0" name="pf_coin_amount_input" value="0">
+    <button form="pf_add_coin_form" id="add_coin_button" name="add_coin" type="submit" value="save"> Add </button>
+</form>
+

@@ -1,0 +1,85 @@
+
+<table id="portfolio_table">
+    <thead>
+        <tr>
+            <th>
+                Symbol
+            </th>
+            <th>
+                Name
+            </th>
+            <th>
+                Amount
+            </th>
+            <th>
+                Price
+            </th>
+            <th>
+                24h Δ
+            </th>
+            <th>
+                24h Δ%
+            </th>
+            <th>
+                24h low
+            </th>
+            <th>
+                24h high
+            </th>
+            <th>
+                24h vol
+            </th>
+            <th>
+                Source
+            </th>
+            <th>
+                <form method="POST" id="del_from_portfolio_form" action="#">
+                    {% csrf_token %}
+                    <input type="hidden" name="checked_symbols" id="checked_symbols_pf">
+                    <button type="submit" name="delete_from_portfolio" id="delete_from_portfolio" onclick="findChecked()">
+                        Delete
+                    </button>
+                </form>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for coin in portfolio %}
+        <tr>
+            <td>
+                {{ coin.symbol }}
+            </td>
+            <td>
+                {{ coin.name }}
+            </td>
+            <td>
+                {{ coin.amount }}
+            </td>
+            <td>
+                {{ coin.bid }}
+            </td>
+            <td>
+                {{ coin.ask }}
+            </td>
+            <td>
+                {{ coin.daily_delta }}
+            </td>
+            <td>
+                {{ daily_low }}
+            </td>
+            <td>
+                {{ daily_high }}
+            </td>
+            <td>
+                {{ daily_vol }}
+            </td>
+            <td>
+                {% include 'crypto/_set_source_form.html' %}
+            </td>
+            <td>
+                <input type="checkbox" class="star" id="del_{{ coin.symbol }}" name="del_from_pf" value="{{ coin.symbol }}">
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>

@@ -1,0 +1,21 @@
+
+<form id="pf_add_del_form" name="pf_add_del_form" action="#" method="post">
+    {% csrf_token %}
+    <h4>
+        Watchlists
+    </h4>
+    <select id="portfolios_select">
+        {% for watchlist in watchlists %}
+            <option id="{{ portfolio.id }}" name="{{ portfolio.name }}" value="{{ portfolio.id }}"> {{ portfolio.name }} </option>
+        {% endfor %}
+    </select>
+    <div id="pf_btns">
+        <button type="submit" id="pf_del_btn" name="pf_del_watchlist" value="1" onclick="">
+            -
+        </button>
+
+        <button type="submit" id="pf_new_btn" name="pf_new_watchlist" value="1" onclick="">
+            +
+        </button>
+    </div>
+</form>

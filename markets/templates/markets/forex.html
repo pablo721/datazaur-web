@@ -1,0 +1,36 @@
+{% extends 'website/base.html' %}
+
+{% block content %}
+<div id="fx_rates">
+    <h3>
+        FX Rates
+    </h3>
+
+    {% include 'markets/_fx_table.html' %}
+
+    <form id="add_ticker" method="post" action="#">
+        <h3>
+            Add ticker
+        </h3>
+        {{ add_ticker.as_p }}
+
+        <button type="submit" id="add_ticker_button" name="add_ticker">
+            Add ticker
+        </button>
+    </form>
+</div>
+
+<div id="converter">
+
+</div>
+
+<div id="historical_rates">
+
+</div>
+{% endblock %}
+
+{% block js %}
+<script src="{% static 'js/changeFXCurrency.js' %}" type="text/javascript"></script>
+<script src="{% static 'js/invertFX.js' %}" type="text/javascript"></script>
+{% endblock %}
+

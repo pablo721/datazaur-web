@@ -1,0 +1,7 @@
+
+<form id="set_email" method="post">
+    <label> Set or change your email </label>
+    {% csrf_token %}
+    {{ email_form.as_p }}
+    <button type="submit" id="set_email_button"> Save </button>
+</form>

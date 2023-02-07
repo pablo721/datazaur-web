@@ -1,0 +1,13 @@
+
+
+    <ul id="sidebar">
+        {% for item in sidebar_items %}
+            <li id="{{ item.0 }}">
+                <a href="{{ item.1 }}"> {{ item.0 }} </a>
+            </li>
+        {% endfor %}
+    </ul>
+
+
+
+

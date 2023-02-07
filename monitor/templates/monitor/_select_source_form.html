@@ -1,0 +1,8 @@
+
+    <h3> Source: {{ source.name }} </h3>
+    <form method="post" action="#" id="select_source">
+        {% csrf_token %}
+        {{ select_source.as_table }}
+        <button type="submit" value="submit" id="select_source_button"> Select </button>
+    </form>
+

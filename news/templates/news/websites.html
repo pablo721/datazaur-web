@@ -1,0 +1,50 @@
+{% extends 'news/news.html' %}
+
+{% block content %}
+    <div id="add_website_div">
+        <form id="add_website_form" action="#" method="post">
+            {% csrf_token %}
+            {{ add_form.as_table }}
+            <button type="submit" id="add_website_btn"> Save </button>
+        </form>
+    </div>
+    <div id="saved_websites_div">
+        <table id="saved_websites_table">
+            <thead>
+                <tr>
+                    <th>
+                        Title
+                    </th>
+                    <th>
+                        Url
+                    </th>
+                    <th>
+                        Selector
+                    </th>
+                    <th>
+                        <button type="submit" id="del_website"> Delete </button>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                {% if websites %}
+                    {% for website in websites %}
+                        <tr>
+                            <td> {{ website.title }} </td>
+                            <td> {{ website.url }} </td>
+                            <td> {{ website.selector }} </td>
+                            <td>
+                                <input type="checkbox" id="{{ website.id }}">
+                            </td>
+                        </tr>
+                    {% endfor %}
+                {% endif %}
+            </tbody>
+        </table>
+
+    </div>
+
+{% endblock %}
+
+
+

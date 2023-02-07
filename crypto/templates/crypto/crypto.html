@@ -1,0 +1,114 @@
+{% extends 'website/base.html' %}
+
+{% block navbar %}
+    {% include 'crypto/_crypto_navbar.html' %}
+{% endblock %}
+
+
+{% block content %}
+    <div id="crypto_top">
+        <div id="crypto_searchbar">
+            {% include 'website/_search_box.html' %}
+        </div>
+        <div id="crypto_chg_curr">
+            <select id="crypto_curr_select">
+                <option id="curr_first_opt" name="curr_first_opt" value="{{ currency.code }}"> {{ currency.code }} </option>
+                {% for curr in currencies %}
+                    <option id="{{ curr.code }}" name="currency" value="{{ curr.code }}"> {{ curr.code }} </option>
+                {% endfor %}
+            </select>
+        </div>
+        <div id="crypto_save_watchlist">
+            <form id="save_watchlist_form" method="post" action="#">
+                {% csrf_token %}
+                <input id="checked_symbols" name="checked_symbols" type="hidden">
+                <button id="crypto_save_watchlist_btn" type="submit" onclick="findChecked()"> Save watchlist </button>
+            </form>
+        </div>
+    </div>
+
+    <div id="crypto_table_div">
+        {{ table |safe }}
+        <!--
+        <table id="crypto_table">
+            <thead>
+                <tr>
+                    <th>
+                        Symbol
+                    </th>
+                    <th>
+                        Name
+                    </th>
+                    <th>
+                        Price ({{ currency }})
+                    </th>
+                    <th>
+                        Volume (24h)
+                    </th>
+                    <th>
+                        24h high
+                    </th>
+                    <th>
+                        24h low
+                    </th>
+                    <th>
+                        24h Δ
+                    </th>
+                    <th>
+                        Watch
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for ticker in tickers %}
+                    <tr>
+                        <td>
+                            {{ ticker.base }}
+                        </td>
+                        <td>
+                            noname
+                        </td>
+                        <td>
+                            {{ ticker.bid }}
+                        </td>
+                        <td>
+                            {{ ticker.daily_vol }}
+                        </td>
+                        <td>
+                            {{ ticker.daily_high }}
+                        </td>
+                        <td>
+                            {{ ticker.daily_low }}
+                        </td>
+                        <td>
+                            {{ ticker_daily_delta }}
+                        </td>
+                        <td>
+                            <input type="checkbox" id="watch_{{ ticker.base }}" name="watch_{{ ticker.base }}"  value="{{ ticker.base }}" class="star">
+                            <button type="submit" id="portf_{{ ticker.base }}" name="portf_btn" value="{{ ticker.base }}">
+                                add to portfolio
+                            </button>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+
+        </table>
+        -->
+    </div>
+{% endblock %}
+
+{% block js %}
+    <script type="text/javascript">
+    var watchlist_ids = "{{ watchlist_ids |safe }}";
+    console.log(watchlist_ids);
+    </script>
+    <script src="{% static 'js/crypto.js' %}" type="text/javascript"></script>
+    <script src="{% static 'js/findChecked.js' %}" type="text/javascript"></script>
+    <script src="{% static 'js/addToPortfolio.js' %}" type="text/javascript"></script>
+    <script src="{% static 'js/filterResults.js' %}" type="text/javascript"></script>
+    <script src="{% static 'js/rememberWatchlist.js' %}" type="text/javascript"></script>
+    <script src="{% static 'js/selectize.js' %}" type="text/javascript"></script>
+
+{% endblock %}
+

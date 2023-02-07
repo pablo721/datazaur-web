@@ -1,0 +1,83 @@
+{% extends 'website/base.html' %}
+
+
+{% block searchbar %}
+
+{% endblock %}
+
+{% block sidebar %}
+    {% include 'companies/_companies_sidebar.html' %}
+{% endblock %}
+
+{% block content %}
+<div id="company_search_results_div">
+    {% if results %}
+    <table id="company_search_results_table">
+        <thead>
+        <tr>
+
+            <th>
+                Exchange
+            </th>
+            <th>
+                Description
+            </th>
+            <th>
+                Symbol
+            </th>
+            <th>
+                FIGI
+            </th>
+            <th>
+                ISIN
+            </th>
+            <th>
+                Type
+            </th>
+            <th>
+                Currency
+            </th>
+
+        </tr>
+        </thead>
+        <tbody>
+
+        {% for row in results %}
+        <tr>
+
+            <td>
+                {{ row.exchange.name }}
+            </td>
+            <td>
+                {{ row.description }}
+            </td>
+            <td>
+                <a href="/companies/{{ row.displaySymbol }}/overview">
+                    {{ row.displaySymbol }}
+                </a>
+            </td>
+            <td>
+                {{ row.figi }}
+            </td>
+            <td>
+                {{ row.isin }}
+            </td>
+            <td>
+                {{ row.type }}
+            </td>
+            <td>
+                {{ row.currency_code.symbol }}
+            </td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    {% endif %}
+</div>
+
+{% endblock %}
+
+
+{% block js %}
+
+{% endblock %}

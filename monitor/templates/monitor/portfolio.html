@@ -1,0 +1,27 @@
+{% extends 'website/base.html' %}
+
+{% block content %}
+
+    <div id="portfolio_view" class="row">
+        <div id="portfolio_sidebar_div" class="container">
+            {% include 'watchlist/_portfolio_sidebar.html' %}
+        </div>
+        <div id="portfolio_table_div">
+            {% include 'watchlist/_portfolio_table.html' %}
+        </div>
+    </div>
+{% endblock %}
+
+{% block js %}
+    {% if notification %}
+        <script type="text/javascript">
+            let text = "{{ notification }}";
+            alert(text);
+        </script>
+    {% endif %}
+
+    <script src="{% static 'js/selectize.js' %}" type="text/javascript">
+    </script>
+{% endblock %}
+
+

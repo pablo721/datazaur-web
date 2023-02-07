@@ -1,0 +1,29 @@
+{% extends 'website/base.html' %}
+
+
+{% block navbar %}
+    {% include 'markets/_markets_navbar.html' %}
+{% endblock %}
+
+
+
+{% block content %}
+    <div id="main_curve">
+        {{ main_curve |safe }}
+    </div>
+
+    {% for curve in yield_curves %}
+        <div class="yield_curves">
+            {{ curve |safe }}
+        </div>
+    {% endfor %}
+
+{% endblock %}
+
+
+
+{% block js %}
+
+{% endblock %}
+
+

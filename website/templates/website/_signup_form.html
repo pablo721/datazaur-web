@@ -1,0 +1,19 @@
+
+
+<form method="post" action="#" id="sign_up_form">
+    <h2> Sign up </h2>
+    {% csrf_token %}
+        {{ signup_form.as_p }}
+    <p>
+        Currency
+    </p>
+    <select id="su_curr_select" name="su_curr_select">
+        {% for currency in currencies %}
+            <option name="su_curr_option" value="{{ currency.code }}">
+                {{ currency.name }} ({{ currency.code }})
+            </option>
+        {% endfor %}
+    </select>
+    <button type="submit" value="submit" id="signup_button"> Sign up </button>
+</form>
+

@@ -1,0 +1,58 @@
+{% extends 'crypto/crypto.html' %}
+
+
+{% block content %}
+<div id="exchanges_top_bar">
+
+        {% include 'website/_search_box.html' %}
+<!--        <form id="save_fav_exchanges_form" method="post">-->
+<!--            {% csrf_token %}-->
+<!--            <input type="hidden" name="fav_exchanges" id="fav_exchanges">-->
+<!--            <button type="submit" id="save_fav_exchanges"> Save favourites </button>-->
+<!--        </form>-->
+</div>
+
+
+<div id="exchanges_div">
+    <table id="exchanges_table">
+        <thead>
+            <tr>
+                <th> Name </th>
+                <th> Url </th>
+                <th> Volume </th>
+                <th> Favourite </th>
+            </tr>
+        </thead>
+        <tbody>
+            {% csrf_token %}
+            {% for obj in object_list %}
+                <tr>
+                    <td>
+                        {{ obj.name }}
+                    </td>
+                    <td>
+                        <a href="{{ obj.url }}"> {{ obj.url }} </a>
+                    </td>
+
+                    <td>
+                        {{ obj.volume }}
+                    </td>
+                    <td>
+                        {% if obj.id in favourites %}
+                            <input class="star" type="checkbox" value="{{ obj.pk }}" checked><br/><br/>
+                        {% else %}
+                            <input class="star" type="checkbox" value="{{ obj.pk }}"><br/><br/>
+                        {% endif %}
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+
+    </table>
+</div>
+{% endblock %}
+
+{% block js %}
+    <script src="{% static 'js/filterResults.js' %}" type="text/javascript"></script>
+    <script src="{% static 'js/addExchange.js' %}" type="text/javascript"></script>
+{% endblock %}

@@ -1,0 +1,15 @@
+
+
+<form id="watch_source_form" name="set_source_form" action="#" method="post">
+    {% csrf_token %}
+    <select id="watch_source_select" name="watch_source_select">
+        {% for exchange in exchanges %}
+            <option id="watch_source_option_{{ exchange.name }}" name="watch_source_option" value="watch_source_option_{{ exchange.name }}">
+                {{ exchange.name }}
+            </option>
+        {% endfor %}
+    </select>
+    <button form="watch_source_form" id="set_source_btc" name="set_source_btc" value="1">
+        Set source
+    </button>
+</form>

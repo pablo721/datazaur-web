@@ -1,0 +1,29 @@
+{% extends 'website/base.html' %}
+
+{% block content %}
+
+    <div id="watchlist_view" class="row">
+        <div id="watchlist_sidebar_div0" class="container">
+
+            {% include 'monitor/_watchlist_panel.html' %}
+        </div>
+        <div id="watchlist_table_div">
+            {% include 'monitor/_watchlist_table.html' %}
+        </div>
+    </div>
+{% endblock %}
+
+{% block js %}
+    {% if notification %}
+        <script type="text/javascript">
+            let text = "{{ notification }}";
+            alert(text);
+        </script>
+    {% endif %}
+
+    <script src="{% static 'js/watchlist.js' %}" type="text/javascript">
+    </script>
+    <script src="{% static 'js/findChecked.js' %}" type="text/javascript">
+    </script>
+{% endblock %}
+

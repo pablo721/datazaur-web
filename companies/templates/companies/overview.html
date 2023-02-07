@@ -1,0 +1,46 @@
+{% extends 'website/base.html' %}
+
+{% block searchbar %}
+
+{% endblock %}
+
+{% block sidebar %}
+    {% include 'companies/_companies_sidebar.html' %}
+{% endblock %}
+
+
+{% block content %}
+    <div id="companies_overview_table_div">
+        <div id="companies_overview_head_div">
+            <h1 id="companies_overview_head">
+                {{ company_name }}
+            </h1>
+            <img id="companies_overview_logo" src="{{ logo_url }}">
+
+        </div>
+        <table id="companies_overview_table">
+            <tbody>
+                {% for k, v in data.items %}
+                    <tr>
+                        <td>
+                            {{ k }}
+                        </td>
+                        <td>
+                            {{ v |safe}}
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <div id="companies_overview_description_div">
+        <h3 id="companies_overview_description_head">
+            Business description
+        </h3>
+        <p id="companies_overview_description_text">
+            {{ description }}
+        </p>
+    </div>
+
+{% endblock %}

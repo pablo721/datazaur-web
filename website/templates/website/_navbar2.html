@@ -1,0 +1,19 @@
+
+
+
+<div id="navbar2" class="w3-top w3-bar w3-black w3-card">
+    <a href="{% url 'website:home' %}" class="w3-bar-item w3-button w3-padding-large"> Home </a>
+    <a href="{% url 'markets:markets' %}" class="w3-bar-item w3-button w3-padding-large"> Markets </a>
+    <a href="{% url 'crypto:crypto' %}" class="w3-bar-item w3-button w3-padding-large"> Crypto </a>
+    <a href="{% url 'watchlist:watchlist' %}" class="w3-bar-item w3-button w3-padding-large"> Watchlist </a>
+    <a href="{% url 'watchlist:portfolio' %}" class="w3-bar-item w3-button w3-padding-large"> Portfolio </a>
+    <a href="{% url 'news:news' %}" class="w3-bar-item w3-button w3-padding-large"> News </a>
+    <a href="{% url 'calendar_:calendar' %}" class="w3-bar-item w3-button w3-padding-large"> Calendar </a>
+    {% if user.is_authenticated %}
+        <a href="{% url 'website:log_out' %}" class="w3-bar-item w3-button w3-padding-large"> Log Out </a>
+    {% else %}
+        <a href="{% url 'website:login' %}" class="w3-bar-item w3-button w3-padding-large"> Log In </a>
+        <a href="{% url 'website:signup' %}" class="w3-bar-item w3-button w3-padding-large"> Sign Up </a>
+    {% endif %}
+</div>
+

@@ -1,0 +1,41 @@
+
+
+<table id="calendar_table">
+    <thead>
+    <tr>
+        {% for col in columns %}
+        <th>
+            {{ col }}
+        </th>
+        {% endfor %}
+    </tr>
+    </thead>
+    <tbody>
+    {% for row in calendar %}
+    <tr>
+        <td>
+            {{ row.id }}
+        </td>
+        <td>
+            {{ row.symbol }}
+        </td>
+        <td>
+            {{ row.name }}
+        </td>
+        <td>
+            {{ row.reportDate }}
+        </td>
+        <td>
+            {{ row.fiscalDateEnding }}
+        </td>
+        <td>
+            {{ row.estimate }}
+        </td>
+        <td>
+            {{ row.currency }}
+        </td>
+
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>

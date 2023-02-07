@@ -1,0 +1,33 @@
+
+
+<div id="companies_sidebar_div" class="w3-list w3-black w3-card">
+    <div id="companies_sidebar_top">
+        <form id="company_search_form" method="get" action="/companies">
+            <input type="text" id="company_search_input" name="company_search_query" placeholder="Name / ticker / ISIN">
+            <button id="company_search_button" type="submit" onclick="searchCompanies();">
+                Search
+            </button>
+        </form>
+    </div>
+    <div id="companies_sidebar_bottom">
+        {% include 'website/_sidebar.html' %}
+    </div>
+</div>
+
+
+
+{% comment %}
+
+
+          <li><a href="{% url 'companies:market_data' %}"> Market data </a></li>
+          <li><a href="{% url 'companies:financials' %}"> Financials </a></li>
+          <li><a href="{% url 'companies:key_metrics' %}"> Key metrics </a></li>
+          <li><a href="{% url 'companies:ratios' %}"> Ratios </a></li>
+          <li><a href="{% url 'companies:insider_sentiment' %}"> Insider sentiment </a></li>
+          <li><a href="{% url 'companies:options' %}"> Options </a></li>
+          <li><a href="{% url 'companies:ownership' %}"> Ownership </a></li>
+          <li><a href="{% url 'companies:recommendations' %}"> Recommendations </a></li>
+          <li><a href="{% url 'companies:related_news' %}"> Related news </a></li>
+          <li><a href="{% url 'companies:enterprise_value' %}"> Enterprise value </a></li>
+
+{% endcomment %}

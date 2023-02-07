@@ -1,0 +1,39 @@
+<div id="fx_col">
+    <table id="fx_column" style="border: solid black 1px">
+        <thead>
+            <tr>
+                <th>
+                    <button type="submit" id="invert_fx" name="invert_fx">
+                        Invert
+                    </button>
+                </th>
+                <th>
+                    <select id="chg_fx_curr">
+
+                        {% for curr in currencies %}
+                            <option id="{{ curr }}" value="{{ curr }}">
+                                {{ curr }}
+                            </option>
+                        {% endfor %}
+                    </select>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for rate in rates %}
+                <tr>
+                    <td>
+                        {{ rate.0 }}
+                    </td>
+                    <td>
+                        {{ rate.1 }}
+                    </td>
+                </tr>
+            {% endfor %}
+
+        </tbody>
+
+    </table>
+
+
+</div>

@@ -1,0 +1,77 @@
+
+<table id="watchlist_table">
+    <thead>
+        <tr>
+            <th>
+                Symbol
+            </th>
+            <th>
+                Price
+            </th>
+            <th>
+                1h %Δ
+            </th>
+            <th>
+                24h %Δ
+            </th>
+            <th>
+                7d %Δ
+            </th>
+            <th>
+                30d %Δ
+            </th>
+            <th>
+                24h vol
+            </th>
+            <th>
+                Source
+            </th>
+            <th>
+                <form method="POST" id="del_from_watchlist_form" action="#">
+                    {% csrf_token %}
+                    <input type="hidden" name="checked_symbols" id="checked_symbols">
+                    <input type="hidden" name="watchlist_id" value="{{ watchlist.pk }}">
+                    <button type="submit" name="delete_from_watchlist" id="delete_from_watchlist" onclick="findChecked()">
+                        Delete
+                    </button>
+                </form>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for ticker in watchlist_tickers %}
+        <tr>
+            <td>
+                {{ ticker.base }} / {{ ticker.quote }}
+            </td>
+
+            <td>
+                {{ ticker.price }}
+            </td>
+            <td>
+
+            </td>
+            <td>
+
+            </td>
+            <td>
+
+            </td>
+            <td>
+
+            </td>
+            <td>
+
+            </td>
+            <td>
+                {{ ticker.source }}
+            </td>
+            <td>
+                <input type="checkbox" class="star" name="del_from_watch" value="{{ ticker.pk }}">
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+

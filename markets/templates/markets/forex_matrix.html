@@ -1,0 +1,27 @@
+{% extends 'website/base.html' %}
+
+{% block navbar %}
+    {% include 'markets/_fx_navbar.html' %}
+{% endblock %}
+
+
+{% block content %}
+
+<div id="fx_table">
+    {{ table |safe}}
+</div>
+{% endblock %}
+
+{% block js %}
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+

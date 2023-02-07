@@ -1,0 +1,7 @@
+
+
+<div id="extended_navbar" class="w3-top w3-bar w3-black w3-card">
+    {% for item in navbar %}
+    <a href="{{ item.url }}" class="w3-bar-item w3-button w3-padding-large"> {{ item.name }}</a>
+    {% endfor %}
+</div>

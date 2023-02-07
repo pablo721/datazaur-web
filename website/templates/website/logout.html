@@ -1,0 +1,11 @@
+{% extends 'website/base.html' %}
+
+{% block navbar %}
+    {% include 'website/_navbar.html' %}
+{% endblock %}
+
+{% block content %}
+<p>
+    You have successfully logged out. Click <a href="{% url 'website:login' %}">here</a> to log in again.
+</p>
+{% endblock %}

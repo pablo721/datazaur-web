@@ -1,0 +1,13 @@
+
+<ul id="friend_list">
+    {% if friends %}
+        {% for friend in friends %}
+            <li>
+                (( friend.name ))
+            </li>
+        {% endfor %}
+    {% endif %}
+</ul>
+
+
+

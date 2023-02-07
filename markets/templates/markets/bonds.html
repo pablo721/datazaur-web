@@ -1,0 +1,14 @@
+{% extends 'website/base.html' %}
+
+{% block content %}
+    {% for country, table in countries.items %}
+    <div class="yields_col">
+        <h2>
+            {{ country }}
+        </h2>
+        {{ table |safe}}
+    </div>
+    {% endfor %}
+
+{% endblock %}
+

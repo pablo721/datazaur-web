@@ -1,0 +1,38 @@
+{% extends 'website/base.html' %}
+
+{% block navbar %}
+    {% include 'website/_navbar.html' %}
+{% endblock %}
+
+{% block content %}
+<div id="news_searchbar">
+    <div id="filter_websites">
+        {% include 'website/_search_box.html' %}
+    </div>
+    <div id="saved_websites">
+        <a href="{% url 'news:websites' %}"> Saved websites </a>
+    </div>
+</div>
+
+<div id="news_div">
+    <div id="crypto_news_table">
+        {{ crypto_news |safe }}
+    </div>
+    <div id="scrapped_news">
+        {% for website, table in scrapped_news.items %}
+        <div id="{{ website }}">
+            <h3>
+                News from: {{ website }}
+            </h3>
+            {{ table |safe }}
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
+
+{% block js %}
+    <script src="{% static 'js/filterResults.js' %}" type="text/javascript"></script>
+{% endblock %}
+
+

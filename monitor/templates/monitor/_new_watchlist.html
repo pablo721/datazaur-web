@@ -1,0 +1,12 @@
+
+
+<form id="new_watch_form" action="#" method="post">
+    {% csrf_token %}
+    <h5>
+        New watchlist
+    </h5>
+    {{ new_watchlist.as_p }}
+    <button class="w3-btn" form="new_watch_form" id="new_watch_btc" name="new_watch_btn" value="1">
+        Create
+    </button>
+</form>

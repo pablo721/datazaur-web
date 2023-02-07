@@ -1,0 +1,29 @@
+
+
+<div id="navbar" class="w3-top w3-bar w3-black w3-card">
+    <a href="{% url 'website:home' %}" class="w3-bar-item w3-button w3-padding-large"> Home </a>
+    <a href="{% url 'markets:markets' %}" class="w3-bar-item w3-button w3-padding-large"> Markets </a>
+    <a href="{% url 'crypto:crypto' %}" class="w3-bar-item w3-button w3-padding-large"> Crypto </a>
+    <a href="{% url 'macro:macro' %}" class="w3-bar-item w3-button w3-padding-large"> Macro </a>
+    <a href="{% url 'monitor:watchlist' %}" class="w3-bar-item w3-button w3-padding-large"> Monitor </a>
+    <a href="{% url 'companies:search' %}" class="w3-bar-item w3-button w3-padding-large"> Companies </a>
+    <a href="{% url 'calendar_:macro_calendar' %}" class="w3-bar-item w3-button w3-padding-large"> Calendars </a>
+
+    {% if user.is_authenticated %}
+        <a href="{% url 'website:log_out' %}" class="w3-bar-item w3-button w3-padding-large"> Log Out </a>
+    {% else %}
+        <a href="{% url 'website:login' %}" class="w3-bar-item w3-button w3-padding-large"> Log In </a>
+        <a href="{% url 'website:signup' %}" class="w3-bar-item w3-button w3-padding-large"> Sign Up </a>
+    {% endif %}
+</div>
+
+
+
+{% comment %}
+INCOMING LATER
+    <a href="{% url 'macro:macro' %}" class="w3-bar-item w3-button w3-padding-large"> Macro </a>
+    <a href="{% url 'blockchains:btc' %}" class="w3-bar-item w3-button w3-padding-large"> Blockchain explorer </a>
+    <a href="{% url 'analysis:analysis' %}" class="w3-bar-item w3-button w3-padding-large"> Analysis </a>
+    <a href="{% url 'trade:trade' %}" class="w3-bar-item w3-button w3-padding-large"> Trading </a>
+
+{% endcomment %}

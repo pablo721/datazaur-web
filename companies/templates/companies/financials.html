@@ -1,0 +1,20 @@
+{% extends 'website/base.html' %}
+
+{% block navbar %}
+    {% include 'companies/_financials_navbar.html' %}
+{% endblock %}
+
+{% block sidebar %}
+    {% include 'companies/_companies_sidebar.html' %}
+{% endblock %}
+
+{% block content %}
+    <div id="companies_financials_table_div">
+        {{ table |safe }}
+    </div>
+{% endblock %}
+
+
+
+
+

@@ -1,0 +1,30 @@
+
+<h2>
+    FX Rates
+</h2>
+<table id="fx_rates">
+    <thead>
+        <tr>
+            <th>
+                Ticker
+            </th>
+        </tr>
+            <th>
+                Rate
+            </th>
+    </thead>
+    <tbody>
+        {% for rate in rates %}
+            <tr>
+                <td>
+                    rate.0
+                </td>
+                <td>
+                    rate.1
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+

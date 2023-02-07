@@ -1,0 +1,19 @@
+
+<form id="watch_add_coin_form" method="post" action="#">
+    {% csrf_token %}
+    <h4>
+        Add coin
+    </h4>
+    <label for="watch_add_coin_select">
+        Coin
+    </label>
+    <select id="watch_add_coin_select" name="watch_add_coin_select">
+        {% for ticker in tickers %}
+            <option name="watch_add_coin" value="{{ ticker.pk }}">
+                {{ ticker.base }}/{{ ticker.quote }}   ({{ ticker.source }})
+            </option>
+        {% endfor %}
+    </select>
+    <button form="watch_add_coin_form" id="add_coin_button" name="add_coin" type="submit" value="save"> Add </button>
+</form>
+

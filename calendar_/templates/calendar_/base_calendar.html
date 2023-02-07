@@ -1,0 +1,23 @@
+{% extends 'website/base.html' %}
+
+{% block searchbar %}
+    {% include 'website/_search_box.html' %}
+{% endblock %}
+
+{% block sidebar %}
+  <div id="calendar_sidebar_div" class="w3-list w3-black w3-card">
+    {% include 'calendar_/_calendar_sidebar.html' %}
+  </div>
+{% endblock %}
+
+
+{% block content %}
+  <div id="calendar_table_div">
+    {% include 'calendar_/_calendar_table.html' %}
+  </div>
+{% endblock %}
+
+
+{% block js %}
+  <script src="{% static 'js/filterResults.js' %}"></script>
+{% endblock %}

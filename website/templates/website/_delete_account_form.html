@@ -1,0 +1,7 @@
+<form id="delete_account" method="post">
+    <label> Delete account </label>
+    {% csrf_token %}
+    {{ delete_form.as_p }}
+    <button type="submit" id="delete_account_buton"> Delete </button>
+</form>
+
