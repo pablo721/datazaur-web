@@ -79,7 +79,7 @@ passwd = os.environ.get('LOCAL_DB_PASS')
 
 #DATABASE_URL = 'postgres://mhyckrjvahjtjf:901fc27da08a9f252ebd75fea3712b769ca65196438e4a67979edb3df750870c@ec2-34-255-134-200.eu-west-1.compute.amazonaws.com:5432/d9hoo4qbgp6uq9'
 DATABASES = {
-    'default': {
+    'default2': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'zaurdb2',
         'USER': 'zaur',
@@ -87,12 +87,12 @@ DATABASES = {
         'HOST': 'localhost',
         'PORT': '5432',
         },
-    'default2': {
+    'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': os.environ.get('HEROKU_DB_NAME'),
-        'USER': os.environ.get('HEROKU_DB_USER'),
-        'PASSWORD': os.environ.get('HEROKU_DB_PASS'),
-        'HOST': os.environ.get('HEROKU_DB_HOST'),
+        'NAME': os.environ.get('HEROKU_DB'),
+        'USER': os.environ.get('HEROKU_USER'),
+        'PASSWORD': os.environ.get('HEROKU_PASS'),
+        'HOST': os.environ.get('HEROKU_HOST'),
         'PORT': '5432',
     }
     }
