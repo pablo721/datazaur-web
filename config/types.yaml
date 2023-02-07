@@ -1,0 +1,7 @@
+
+asset_classes : [crypto, fx, commodity, bond, fund, etf, stock, derivative, index]
+commodity_groups : [metals, meats, grains, softs, energy]
+source_types : [crypto_exchange, stock_exchange, data_provider, broker_dealer, trading_platform]
+log_message_types : [error, warning, info, traffic, alarm, event, debug, statistic]
+
+
