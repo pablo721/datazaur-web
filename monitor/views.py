@@ -33,6 +33,9 @@ class WatchlistView(TemplateView):
              'delete_watchlist': DeleteWatchlist, 'currency_form': ChangeCurrency}
 
     def get(self, request, *args, **kwargs):
+        if not request.user.is_authenticated:
+            return render(request, 'website/login_required.html')
+
         context = self.get_context_data(**kwargs)
         return render(self.request, self.template_name, context)
 

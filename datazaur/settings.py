@@ -81,7 +81,7 @@ passwd = os.environ.get('LOCAL_DB_PASS')
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'zaurdb',
+        'NAME': 'zaurdb2',
         'USER': 'zaur',
         'PASSWORD': passwd,
         'HOST': 'localhost',

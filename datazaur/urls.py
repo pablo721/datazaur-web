@@ -9,6 +9,7 @@ urlpatterns = [
     path('markets/', include('markets.urls'), name='markets'),
     path('crypto/', include('crypto.urls'), name='crypto'),
     path('monitor/', include('monitor.urls'), name='monitor'),
+    path('macro/', include('macro.urls'), name='macro'),
     path('companies/', include('companies.urls'), name='companies'),
     path('calendar/', include('calendar_.urls'), name='calendar'),
     path('news/', include('news.urls'), name='news'),

@@ -448,11 +448,7 @@ color:white}
 
 /* INSIDERS */
 
-/* WEBSITE */
 
-#signup_form{position:absolute; top:50px; left:12px}
-#su_curr_select{width:25%; height:15%}
-#signup_button{float:right; width:20%}
 
 
 
@@ -492,3 +488,12 @@ color:white}
 td{padding:5px 20px}
 th{padding:15px 25px}
 
+
+/* LOGIN  SITEs */
+
+#login_required_div{position:absolute; top:55px; left:15px;}
+#login_div{position:absolute; top:55px; left:15px;}
+#login_form{position:absolute; top:35px; left:15px; height:320px}
+#signup_form{position:absolute; top:35px; left:15px; height:800px; width:500px}
+#login_button{height:40px; width:90px}
+#signup_button{height:40px; width:90px}
