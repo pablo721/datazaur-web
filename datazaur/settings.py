@@ -142,7 +142,7 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-CSRF_TRUSTED_ORIGINS = ['https://chat90.herokuapp.com']
+CSRF_TRUSTED_ORIGINS = ['https://datazaur6.herokuapp.com']
 
 
 import django_on_heroku
