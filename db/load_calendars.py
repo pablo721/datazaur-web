@@ -16,8 +16,8 @@ alpha_key = '1WEDCC91HCX5F7U4'
 finmodel_key = 'fe6b9480f1fe2fa7d2b589cf7cd6f297'
 username = 'zaur'
 password = 'wsad1221'  # os.environ.get("LOCAL_DB_PASS")
-conn_string = get_connection_string('postgresql', 'psycopg2', username, password, 'localhost', '5432', 'zaurdb2')
-engine = sqlalchemy.create_engine(conn_string)
+#conn_string = get_connection_string('postgresql', 'psycopg2', username, password, 'localhost', '5432', 'zaurdb2')
+engine = sqlalchemy.create_engine('postgresql+psycopg2://yxdlhswxvyfeik:94f6c9de4579a8e18635b43d2bd0c6a0ecccbd7598889feb92c0bc780b81388f@ec2-34-252-35-249.eu-west-1.compute.amazonaws.com:5432/d35oa9qk8cakgt')
 
 
 class CalendarLoader:

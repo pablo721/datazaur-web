@@ -21,8 +21,8 @@ def setup_all():
     create_schemas()
     url = os.environ.get('LOCAL_DB_URL')
     db_client = BaseDbClient(url)
-    markets_loader = MarketsLoader(url)
-    markets_loader.load_all_markets()
+    #markets_loader = MarketsLoader(url)
+    #markets_loader.load_all_markets()
 
     calendar_loader = CalendarLoader(url)
     calendars = calendar_loader.load_all_calendars()

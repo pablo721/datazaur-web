@@ -15,7 +15,7 @@ SECRET_KEY = os.environ.get("DJANGO_SECRET")
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'datazaur.herokuapp.com',
+    'datazaur6.herokuapp.com',
      '127.0.0.1',
     'localhost'
 ]
