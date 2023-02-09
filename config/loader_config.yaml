@@ -1,0 +1,24 @@
+
+binance:
+  tickers:
+    - BTC/USDT
+    - ETH/USDT
+    - ADA/USDT
+    - DOT/USDT
+  intervals:
+    - 1h
+    - 1d
+
+
+kraken:
+  tickers:
+    - BTC/USDT
+    - ETH/USDT
+    - ADA/USDT
+    - DOT/USDT
+  intervals:
+    - 1h
+    - 1d
+
+
+
